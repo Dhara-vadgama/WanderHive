@@ -1,0 +1,13 @@
+<% layout("layout/boilerplate")-%>
+<body>
+    <div class="row">
+        <div class="alert alert-danger col-6 offset-3 mt-4" role="alert">
+        <!-- <p class="alert-heading"><%= message %></p> -->
+        <h1>Error</h1>
+         <p><%= message %></p>
+         <pre><%= err.stack %></pre>  This will help you find what line/file caused the error
+      </div>
+    </div>
+    
+</body>
+
