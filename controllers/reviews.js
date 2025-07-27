@@ -9,10 +9,12 @@ module.exports.createReview=async(req,res)=>{
     listing.reviews.push(newReview);
     await newReview.save();
     await listing.save();
- //    console.log(newReview);
+    // console.log(newReview);
     req.flash("success","New Review Created");
+   
     res.redirect(`/listings/${listing._id}`);
  }
+
 
  module.exports.deleteReview=async(req,res)=>{
     let{id,reviewId}=req.params;

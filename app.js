@@ -7,8 +7,8 @@ const express= require("express");
 const app = express();
 const mongoose= require("mongoose");
 const methodOverride=require("method-override")
-// const URL ="mongodb://127.0.0.1:27017/WanderHive";
-const dbUrl = process.env.ATLASDB_URL;
+//const URL ="mongodb://127.0.0.1:27017/WanderHive";
+ dbUrl = process.env.ATLASDB_URL;
 
 const path=require("path");
 const Listing=require("./models/listing.js");
@@ -30,7 +30,7 @@ const LocalStrategy =require("passport-local");
 const User= require("./models/user.js");
 
 async function main(){
-    await mongoose.connect(dbUrl,{
+    await mongoose.connect( dbUrl,{
         useNewUrlParser: true,
         useUnifiedTopology: true
       });
@@ -52,7 +52,7 @@ main().then(()=>{
 );
 
 const store =  MongoStore.create({
-    mongoUrl: dbUrl,
+    mongoUrl:  dbUrl,
     crypto: {
         secret: process.env.SECRET
       },
@@ -114,6 +114,8 @@ app.use("/listings",listingsRouter);
 
 //behalf of user path
 app.use("/", userRouter);
+//behalf of all review path
+app.use("/listings/:id/reviews",reviewsRouter);
 
 // add this route here
 app.get("/check", (req, res) => {
@@ -125,12 +127,12 @@ app.all("*", (req, res, next) => {
     next(new ExpressError(404, "Page not found"));
 });
 
-//behalf of all review path
-app.use("/listings/:id/reviews",reviewsRouter);
 
-//behalf of user path
 
-app.use("/",userRouter);
+// //behalf of user path
+// app.use("/",userRouter);
+
+
 
 // app.get("/testListing",async (req,res)=>{
 //   let sampleListing= new Listing({

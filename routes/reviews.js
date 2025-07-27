@@ -1,5 +1,5 @@
 const express=require("express");
-const router =express.Router();
+const router = express.Router({ mergeParams: true });
 const wrapAsync=require("../utils/wrapAsync.js");
 const ExpresError=require("../utils/ExpressError.js");
 const {listingSchema}=require("../schema.js");
