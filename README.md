@@ -52,8 +52,6 @@ https://wanderhive-kdx4.onrender.com/listings
 
 ---
 
-## 📸 Screenshots
-
 *(Add project screenshots here)*
 
 Example folder structure:
