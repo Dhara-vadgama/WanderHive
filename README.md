@@ -52,7 +52,6 @@ https://wanderhive-kdx4.onrender.com/listings
 
 ---
 
-*(Add project screenshots here)*
 
 Example folder structure:
 
@@ -118,16 +117,6 @@ WanderHive
 └── app.js
 ```
 
----
-
-## 🚀 Future Improvements
-
-- Image upload using Cloudinary
-- Search and filter listings
-- Booking system
-- User profile dashboard
-
----
 
 ## 👩‍💻 Author
 
