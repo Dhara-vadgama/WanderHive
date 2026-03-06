@@ -52,18 +52,6 @@ https://wanderhive-kdx4.onrender.com/listings
 
 ---
 
-
-Example folder structure:
-
-```
-/screenshots
-   home.png
-   listing.png
-   review.png
-```
-
----
-
 ## ⚙️ Setup Instructions
 
 ### 1️⃣ Clone the repository
