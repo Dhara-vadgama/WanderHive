@@ -1,21 +1,38 @@
 <style>
-  .btn-search{
+  .btn-search {
     background-color: #fe424d;
-    color:#ffffff;
+    color: #fff;
     border-radius: 25px;
-    padding: 0rem 1rem;
-  
+    padding: 0.4rem 1.2rem;
+    border: none;
+    font-weight: 500;
   }
-   .btn-search:hover{
-    background-color: #fe424d;
-    color:#fff;
+  .btn-search:hover {
+    background-color: #e5323c;
+    color: #fff;
   }
-  .btn-search i{
+  .btn-search i {
     display: inline;
-    margin-right: 0.5rem;
+    margin-right: 0.4rem;
   }
-  .search-inp{
-    padding: 0.5rem 5rem 0.5rem 0.5rem;
+  .search-inp {
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+  }
+  @media (max-width: 767px) {
+    .navbar-nav .d-flex {
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      margin-top: 0.5rem;
+    }
+    .search-inp, .btn-search {
+      width: 100%;
+    }
+    .navbar-nav {
+      gap: 0.25rem;
+      padding: 0.5rem 0;
+    }
   }
 </style>
 
@@ -29,7 +46,7 @@
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
-      <div class="navbar-nav ms-auto">
+      <div class="navbar-nav mx-auto">
         <form class="d-flex" role="search">
           <input class="form-control me-2 search-inp" type="search" placeholder="Search Destinations" aria-label="Search"/>
           <button class="btn btn-search" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
@@ -37,21 +54,12 @@
       </div>
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Add New</a>
-  
-              <!-- <% if (typeof currUser !== "undefined" && !currUser) { %>
-                <a href="/login"><b>Log In</b></a>
-                <a href="/signup"><b>Sign Up</b></a>
-              <% } else { %>
-                <a href="/logout"><b>Log Out</b></a>
-              <% } %> -->
-              
-              <% if (isAuthenticated) { %>
-                <a class="nav-link" href="/logout"><b>Log Out</b></a>
-              <% } else { %>
-                <a class="nav-link" href="/signup"><b>Sign Up</b></a>
-                <a class="nav-link" href="/login"><b>Log In</b></a>
-              <% } %>
-              
+        <% if (isAuthenticated) { %>
+          <a class="nav-link" href="/logout"><b>Log Out</b></a>
+        <% } else { %>
+          <a class="nav-link" href="/signup"><b>Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Log In</b></a>
+        <% } %>
       </div>
     </div>
   </div>
